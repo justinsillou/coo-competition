@@ -14,6 +14,12 @@ git clone https://gitlab-etu.fil.univ-lille1.fr/fofanad/projet_competitions.git
 javadoc -d ../docs/ -subpackages *
 ```
 
+- compilation `(toujours dans /src)`
+
+```console
+javac */*.java -d ../bin
+```
+
 - generation de l'archive du projet `(dans /bin)`
 
 ```console
@@ -27,7 +33,7 @@ java -jar competition_v1.jar
 ```
 
 - elements de conception
-	
+
 	protected void play(List<Competitor> c) {
 		ArrayList<Competitor> winners = new ArrayList<Competitor>();
 		ArrayList<Competitor> losers = new ArrayList<Competitor>();
@@ -36,7 +42,7 @@ java -jar competition_v1.jar
 			winners.add(c.get(i));
 		}
 		int nbComp = c.size();
-		
+
 		while(nbComp > 1) {
 			for(int i = 0; i< winners.size(); i+=2) {
 				scheduleMatch(winners.get(i),winners.get(i+1));				
@@ -49,12 +55,12 @@ java -jar competition_v1.jar
 			for(int i = 0; i<losers.size();i++) {
 				winners.remove(losers.get(i));
 			}
-			
+
 			losers.clear();
-			nbComp/=2;	
+			nbComp/=2;
 		}
 	}
-	
+
 - principes de conceptions mis en oeuvre
 
 - valorisation du projet
