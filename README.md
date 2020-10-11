@@ -67,4 +67,4 @@ java -jar competition_v1.jar
 
 **Diagrame de classe du projet**
 
-![alt text](./Competition_project diagram.png?raw=true "Diagrame de classe du projet")
+![DiagrammeUML](diagUML.png)
