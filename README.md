@@ -5,7 +5,7 @@
 - recuperation du depot:
 
 ```console
-git clone https://gitlab-etu.fil.univ-lille1.fr/fofanad/projet_competitions.git
+git clone https://github.com/justinsillou/coo-competition
 ```
 
 - generation de la documentation `(dans /src)`
