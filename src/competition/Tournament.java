@@ -8,7 +8,7 @@ import competitor.Competitor;
 public class Tournament extends Competition {
 
 	/**
-	 * Constructor of the Tournament class which initializes the list of cometitors with the superclass's constructor of Competition  
+	 * Constructor of the Tournament class which initializes the list of cometitors with the superclass's constructor of Competition
 	 * @param competitors
 	 */
 	protected Tournament(List<Competitor> competitors) {
@@ -35,10 +35,10 @@ public class Tournament extends Competition {
 			winners.add(c.get(i));
 		}
 		int nbComp = c.size();
-		
+
 		while(nbComp > 1) {
 			for(int i = 0; i< winners.size(); i+=2) {
-				scheduleMatch(winners.get(i),winners.get(i+1));				
+				scheduleMatch(winners.get(i),winners.get(i+1));
 			}
 			for(int i = 0; i < winners.size(); i++) {
 				if(winners.get(i).isElimine()) {
@@ -48,9 +48,9 @@ public class Tournament extends Competition {
 			for(int i = 0; i<losers.size();i++) {
 				winners.remove(losers.get(i));
 			}
-			
+
 			losers.clear();
-			nbComp/=2;	
+			nbComp/=2;
 		}
 	}
 
@@ -63,10 +63,10 @@ public class Tournament extends Competition {
 		 if(winner == c1) {
 			 super.getMatch().elimination(c2);
 			 super.getMatch().addWinMatch(c1);
-		 }
-		 else {
+		} else {
 			 super.getMatch().elimination(c1);
 			 super.getMatch().addWinMatch(c2);
 		 }
+		 System.out.printf("%s vs %s --> %s wins ! \n", c1.getName(), c2.getName(), winner.getName());
 	}
 }

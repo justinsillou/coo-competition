@@ -42,8 +42,6 @@ public abstract class Competition{
    * @return a Map which contains the competitors and their score
    */
   public Map<Competitor, Integer> ranking(){
-    System.out.println("\n***Ranking***");
-    getScores().forEach((competitor, points) -> System.out.println(competitor.getName() + " - " + points));
     return MapUtil.sortByDescendingValue(scores);
   }
 
