@@ -6,6 +6,7 @@
 **Génération Automatique**
 *Execute toutes les étapes de la Génération Manuelle*
 ```console
+git clone https://github.com/justinsillou/coo-competition
 chmod +x script.sh
 ./script.sh
 ```
