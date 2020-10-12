@@ -1,8 +1,8 @@
 ## Introduction
 
 __But du projet :__ Réprésentation d'une compétition sportive.
-	- Les championnats: matchs aller/retour, le gagnant est celui qui a le plus de victoires
-	- Les tournois: élimination directe sur plusieurs tours, les vainqueurs se rencontrent jusqu'à ce qu'il n'en reste qu'un.
+- Les championnats: matchs aller/retour, le gagnant est celui qui a le plus de victoires
+- Les tournois: élimination directe sur plusieurs tours, les vainqueurs se rencontrent jusqu'à ce qu'il n'en reste qu'un.
 	 
 ### HowTo
 ----
