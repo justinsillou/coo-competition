@@ -1,8 +1,11 @@
 ## Introduction
 
+__But du projet :__ Réprésentation d'une compétition sportive.
+	- Les championnats: matchs aller/retour, le gagnant est celui qui a le plus de victoires
+	- Les tournois: élimination directe sur plusieurs tours, les vainqueurs se rencontrent jusqu'à ce qu'il n'en reste qu'un.
+	 
 ### HowTo
 ----
-
 **Génération Automatique**
 *Execute toutes les étapes de la Génération Manuelle*
 ```console
@@ -87,7 +90,7 @@ java -jar competition_v1.jar
 
 ![DiagrammeUML](diagUML.png)
 
---- 
+---
 
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![byncsa](https://licensebuttons.net/l/by-nc-sa/1.0/88x31.png)
