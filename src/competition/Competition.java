@@ -42,17 +42,20 @@ public abstract class Competition{
    * @return a Map which contains the competitors and their score
    */
   public Map<Competitor, Integer> ranking(){
+    System.out.println("\n***Ranking***");
+    getScores().forEach((competitor, points) -> System.out.println(competitor.getName() + " - " + points));
     return MapUtil.sortByDescendingValue(scores);
   }
 
   /**
   * Affichage
   * @println the players ranking by score
-  */
+
   public void affichage(Map<Competitor,Integer> score) {
-      System.out.println("\n***Ranking***");
-      score.forEach((competitor, points) -> System.out.println(competitor.getName() + " - " + points));
+
+
   }
+  */
 
   /**
    * Getter of the Competition match attribute

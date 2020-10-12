@@ -11,10 +11,11 @@ public class Main {
 																									new Competitor("Lynx"),
 																									new Competitor("Catalyst"),
 																									new Competitor("Raven"),
+																									new Competitor("Drift"),
 																									new Competitor("Midas"));
     Competition compet = new League(competitors);
     compet.play();
-		compet.affichage(compet.ranking());
+		compet.ranking();
 
 		//TOURNAMENT
   }
