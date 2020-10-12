@@ -1,36 +1,46 @@
-**Introduction**
+#Introduction
 
-**HowTo**
+#HowTo
 
-- recuperation du depot:
+**Génération Automatique**
+*Execute toutes les étapes de la Génération Manuelle*
+```console
+chmod +x script.sh
+./script.sh
+```
+
+**Génération Manuelle**
+1. recuperation du depot:
 
 ```console
 git clone https://github.com/justinsillou/coo-competition
 ```
 
-- generation de la documentation `(dans /src)`
+2. generation de la documentation `(dans /src)`
 
 ```console
 javadoc -d ../docs/ -subpackages *
 ```
 
-- compilation `(toujours dans /src)`
+3. compilation `(toujours dans /src)`
 
 ```console
 javac */*.java -d ../bin
 ```
 
-- generation de l'archive du projet `(dans /bin)`
+4. generation de l'archive du projet `(dans /bin)`
 
 ```console
 jar cvfm ../competition_v1.jar ../manifest *
 ```
 
-- execution de l'archive `(dans /projet_competitions)`
+5. execution de l'archive `(dans /projet_competitions)`
 
 ```console
 java -jar competition_v1.jar
 ```
+
+*Pour relancer seulement le programme executez l'archive (Étape 5)*
 
 - elements de conception
 
