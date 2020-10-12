@@ -45,11 +45,14 @@ public abstract class Competition{
     return MapUtil.sortByDescendingValue(scores);
   }
 
+  /**
+  * Affichage
+  * @println the players ranking by score
+  */
   public void affichage(Map<Competitor,Integer> score) {
       System.out.println("\n***Ranking***");
-      score.forEach((c, p) -> System.out.println(c.getName() + " - " + p));
+      score.forEach((competitor, points) -> System.out.println(competitor.getName() + " - " + points));
   }
-
 
   /**
    * Getter of the Competition match attribute
