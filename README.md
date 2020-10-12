@@ -7,6 +7,7 @@
 *Execute toutes les étapes de la Génération Manuelle*
 ```console
 git clone https://github.com/justinsillou/coo-competition
+cd coo-competition/
 chmod +x script.sh
 ./script.sh
 ```
@@ -18,25 +19,28 @@ chmod +x script.sh
 git clone https://github.com/justinsillou/coo-competition
 ```
 
-2. generation de la documentation `(dans /src)`
+2. generation de la documentation
 
 ```console
+cd coo-competition/src/
 javadoc -d ../docs/ -subpackages *
 ```
 
-3. compilation `(toujours dans /src)`
+3. compilation
 
 ```console
 javac */*.java -d ../bin
 ```
 
-4. generation de l'archive du projet `(dans /bin)`
+4. generation de l'archive du projet
 
 ```console
+cd ../bin
 jar cvfm ../competition_v1.jar ../manifest *
+cd ..
 ```
 
-5. execution de l'archive `(dans /projet_competitions)`
+5. execution de l'archive
 
 ```console
 java -jar competition_v1.jar
