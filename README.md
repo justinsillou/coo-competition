@@ -86,4 +86,5 @@ java -jar competition_v1.jar
 
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![byncsa](https://licensebuttons.net/l/by-nc-sa/1.0/88x31.png)
-![logoUniv]()
+
+**Université de Lille 2020-2021**
