@@ -1,6 +1,7 @@
-#Introduction
+## Introduction
 
-#HowTo
+### HowTo
+----
 
 **Génération Automatique**
 *Execute toutes les étapes de la Génération Manuelle*
@@ -8,7 +9,7 @@
 chmod +x script.sh
 ./script.sh
 ```
-
+----
 **Génération Manuelle**
 1. recuperation du depot:
 
@@ -41,6 +42,8 @@ java -jar competition_v1.jar
 ```
 
 *Pour relancer seulement le programme executez l'archive (Étape 5)*
+
+---
 
 - elements de conception
 
@@ -78,3 +81,7 @@ java -jar competition_v1.jar
 **Diagrame de classe du projet**
 
 ![DiagrammeUML](diagUML.png)
+
+## Informations complémentaires
+![Version](https://img.shields.io/badge/version-1.0-blue)
+![byncsa](https://licensebuttons.net/l/by-nc-sa/1.0/88x31.png)
