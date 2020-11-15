@@ -11,8 +11,8 @@ __But du projet :__ Réprésentation d'une compétition sportive.
 **Génération Automatique**
 *Execute toutes les étapes de la Génération Manuelle*
 ```console
-git clone https://gitlab-etu.fil.univ-lille1.fr/fofanad/projet_competitions.git
-cd projet_competitions/
+git clone https://github.com/justinsillou/coo-competition.git
+cd coo-competition/
 chmod +x script.sh
 ./script.sh
 ```
@@ -21,13 +21,13 @@ chmod +x script.sh
 1. recuperation du depot:
 
 ```console
-git clone https://gitlab-etu.fil.univ-lille1.fr/fofanad/projet_competitions.git
+git clone https://github.com/justinsillou/coo-competition.git
 ```
 
 2. generation de la documentation
 
 ```console
-cd projet_competitions/src/
+cd coo-competition/src/
 javadoc -d ../docs/ -subpackages *
 ```
 
@@ -56,35 +56,6 @@ java -jar competition_v1.jar
 ---
 
 - elements de conception
-
-	```java
-	protected void play(List<Competitor> c) {
-		ArrayList<Competitor> winners = new ArrayList<Competitor>();
-		ArrayList<Competitor> losers = new ArrayList<Competitor>();
-
-		for(int i = 0; i< c.size(); i++) {
-			winners.add(c.get(i));
-		}
-		int nbComp = c.size();
-
-		while(nbComp > 1) {
-			for(int i = 0; i< winners.size(); i+=2) {
-				scheduleMatch(winners.get(i),winners.get(i+1));				
-			}
-			for(int i = 0; i < winners.size(); i++) {
-				if(winners.get(i).isElimine()) {
-					losers.add(winners.get(i));
-				}
-			}
-			for(int i = 0; i<losers.size();i++) {
-				winners.remove(losers.get(i));
-			}
-
-			losers.clear();
-			nbComp/=2;
-		}
-	}
-	```
 
 	```java
 	SelectedMethod methode = new FirstOfPool();
