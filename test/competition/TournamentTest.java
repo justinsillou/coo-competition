@@ -18,7 +18,11 @@ public class TournamentTest {
 	@Before
 	public void init() {
 		competitors = Arrays.asList(new Competitor("Blastoff"), new Competitor("Drift"), new Competitor("Midas"), new Competitor("Raven"), new Competitor("Lynx"), new Competitor("Catalyst"),new Competitor("Lyon"), new Competitor("Rook"));
-		tournoi = new Tournament(competitors);
+		try {
+			tournoi = new Tournament(competitors);
+		} catch (NumberOfCompetitorException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test

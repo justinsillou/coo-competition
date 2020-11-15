@@ -7,12 +7,23 @@ import competitor.Competitor;
 
 public class Tournament extends Competition {
 
+	private List<Competitor> winnersList;
 	/**
 	 * Constructor of the Tournament class which initializes the list of cometitors with the superclass's constructor of Competition
 	 * @param competitors
 	 */
-	protected Tournament(List<Competitor> competitors) {
+	protected Tournament(List<Competitor> competitors) throws NumberOfCompetitorException{
 		super(competitors);
+		if (!isPowerOfTwo(competitors.size())){
+			throw new NumberOfCompetitorException("Nombre de compétiteurs doit etre une puissance de 2");
+		}
+	}
+
+	/**
+	* Players needs to be a power of 2
+	*/
+	private boolean isPowerOfTwo(int n){
+		return n>0 && (n&n-1)==0;
 	}
 
 	/**
@@ -20,7 +31,7 @@ public class Tournament extends Competition {
 	 */
 	@Override
 	public void play() {
-		play(super.getCompetitors());
+		play(this.getCompetitors());
 	}
 
 	/**
@@ -28,29 +39,15 @@ public class Tournament extends Competition {
 	 */
 	@Override
 	protected void play(List<Competitor> c) {
-		ArrayList<Competitor> winners = new ArrayList<Competitor>();
-		ArrayList<Competitor> losers = new ArrayList<Competitor>();
+		List<Competitor> competitorList = new ArrayList<Competitor>(c); //liste des joueurs
+		this.winnersList = new ArrayList<Competitor>();
 
-		for(int i = 0; i< c.size(); i++) {
-			winners.add(c.get(i));
-		}
-		int nbComp = c.size();
-
-		while(nbComp > 1) {
-			for(int i = 0; i< winners.size(); i+=2) {
-				scheduleMatch(winners.get(i),winners.get(i+1));
+		while(competitorList.size() > 1){
+			for(int i = 0; i< competitorList.size(); i+=2) {
+				scheduleMatch(competitorList.get(i),competitorList.get(i+1));
 			}
-			for(int i = 0; i < winners.size(); i++) {
-				if(winners.get(i).isElimine()) {
-					losers.add(winners.get(i));
-				}
-			}
-			for(int i = 0; i<losers.size();i++) {
-				winners.remove(losers.get(i));
-			}
-
-			losers.clear();
-			nbComp/=2;
+			competitorList = this.winnersList;
+			this.winnersList = new ArrayList<Competitor>(); //raz de la liste de joueurs
 		}
 	}
 
@@ -59,14 +56,10 @@ public class Tournament extends Competition {
 	 */
 	@Override
 	protected void scheduleMatch(Competitor c1, Competitor c2) {
-		 Competitor winner = super.getMatch().playMatch(c1, c2);
-		 if(winner == c1) {
-			 super.getMatch().elimination(c2);
-			 super.getMatch().addWinMatch(c1);
-		} else {
-			 super.getMatch().elimination(c1);
-			 super.getMatch().addWinMatch(c2);
-		 }
+		 Competitor winner = this.getMatch().playMatch(c1, c2);
+		 this.getScores().put(winner, this.getScores().get(winner)+1);
+		 winner.addWin();
 		 System.out.printf("%s vs %s --> %s wins ! \n", c1.getName(), c2.getName(), winner.getName());
+		 this.winnersList.add(winner); //ajout a la liste de competiteurs le gagnant
 	}
 }

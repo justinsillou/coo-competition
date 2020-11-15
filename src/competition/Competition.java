@@ -18,7 +18,11 @@ public abstract class Competition{
   public Competition(List<Competitor> competitors){
     this.competitors = competitors;
     this.match = new Match();
-	  this.scores = new HashMap<>();
+	  this.scores = new HashMap<Competitor, Integer>();
+    // Mise à 0 des scores de chaque joueurs
+    for (Competitor c : competitors){
+      scores.put(c, 0);
+    }
   }
 
 
@@ -45,15 +49,10 @@ public abstract class Competition{
     return MapUtil.sortByDescendingValue(scores);
   }
 
-  /**
-  * Affichage
-  * @println the players ranking by score
-
   public void affichage(Map<Competitor,Integer> score) {
-
-
+      System.out.println("\n***Ranking***");
+      score.forEach((c, p) -> System.out.println(c.getName() + " - " + p));
   }
-  */
 
   /**
    * Getter of the Competition match attribute
@@ -70,7 +69,6 @@ public abstract class Competition{
   public Map<Competitor, Integer> getScores(){
     return scores;
   }
-
 
   /**
    * Getter of the Competition competitors attribute

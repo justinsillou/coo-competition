@@ -46,5 +46,5 @@ public class Match {
 		}
 		competiteur.setElimine(true);
 	}
-	
+
 }

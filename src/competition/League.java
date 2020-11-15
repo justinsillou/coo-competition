@@ -5,12 +5,11 @@ import java.util.List;
 import competitor.Competitor;
 
 public class League extends Competition {
-
 	/**
 	 * Constructor of the League class which initializes the list of cometitors with the superclass's constructor of Competition
 	 * @param competitors
 	 **/
-	protected League(List<Competitor> competitor) {
+	public League(List<Competitor> competitor) {
 			super(competitor);
 	}
 
@@ -32,11 +31,9 @@ public class League extends Competition {
  */
   @Override
   protected void scheduleMatch(Competitor c1, Competitor c2) {
-      Competitor winner = super.getMatch().playMatch(c1, c2);
-			//Utilisation d'une fonction intermédiaire ... mais qui fonctionne pour l'instant
+      Competitor winner = this.getMatch().playMatch(c1, c2);
+			this.getScores().put(winner, this.getScores().get(winner)+1);
 			winner.addWin();
-			super.getScores().put(winner, winner.getNbWin());
-			//super.getScores().put(winner, super.getScores().get(winner)+1);
 			System.out.printf("%s vs %s --> %s wins ! \n", c1.getName(), c2.getName(), winner.getName());
   }
 
@@ -45,7 +42,12 @@ public class League extends Competition {
    */
   @Override
   public void play() {
-		play(super.getCompetitors());
+	  for(int i = 0; i < this.getCompetitors().size(); i++) {
+		  if(this.getCompetitors().get(i).getNbWin() != 0) {
+			  this.getCompetitors().get(i).setNbWin(0);
+		  }
+	  }
+		play(this.getCompetitors());
   }
 
 }

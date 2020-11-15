@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class MapUtil {
-    
+
 	public static <K, V extends Comparable<? super V>> Map<K, V> sortByDescendingValue(Map<K, V> map) {
 
 		List<Entry<K, V>> sortedEntries = new ArrayList<Entry<K, V>>(map.entrySet());
